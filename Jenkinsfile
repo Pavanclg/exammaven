@@ -21,13 +21,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t exam1 .'
+                sh 'docker build -t exam .'
             }
         }
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl create deployment exam-app --image=exam-app'
+                sh 'kubectl create deployment exam-app --image=exam'
                 sh 'kubectl expose deployment exam-app --type=NodePort --port=8080'
             }
         }
