@@ -21,7 +21,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'minikube image build -t exam-app:latest .'
+                sh 'docker build -t exam-app .'
             }
         }
 
