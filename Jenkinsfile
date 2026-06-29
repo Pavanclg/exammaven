@@ -27,8 +27,8 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl create deployment exam-app --image=exam'
-                sh 'kubectl expose deployment exam-app --type=NodePort --port=8080'
+                sh 'kubectl create deployment exam --image=exam'
+                sh 'kubectl expose deployment exam --type=NodePort --port=8080'
             }
         }
     }
